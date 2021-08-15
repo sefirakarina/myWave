@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from '../Alert/AlertComponent';
 import InputField  from '../Input/InputField';
+import PropTypes from 'prop-types';
 
 const SignupComponent =  (props) => {
   const successMsg = 'Signup successful'
@@ -24,5 +25,11 @@ const SignupComponent =  (props) => {
     </div>
   );
 }
+
+SignupComponent.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  success: PropTypes.bool.isRequired,
+  fields: PropTypes.array.isRequired
+};
 
 export default SignupComponent;

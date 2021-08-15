@@ -1,4 +1,5 @@
 import './inputField.scss'
+import PropTypes from 'prop-types';
 
 const InputField =  (props) => {
   return(
@@ -16,5 +17,14 @@ const InputField =  (props) => {
     </>
   );
 }
+
+InputField.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  onChange: PropTypes.func.isRequired
+};
 
 export default InputField;
