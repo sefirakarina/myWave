@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme';
-import LoginComponent from "./LoginComponent";
+import SignupComponent from "./SignupComponent";
 import InputField from '../Input/InputField';
 
 const fields = [{
@@ -17,22 +17,22 @@ const defaultProps = {
     success: false
 }
 
-describe('LoginComponent', () => {
+describe('SignupComponent', () => {
 
     it('should render 1 InputField', () => {
-        const wrapper = shallow(<LoginComponent {...defaultProps} />) ;
+        const wrapper = shallow(<SignupComponent {...defaultProps} />) ;
         expect(wrapper.find(InputField).length).toBe(1) ;
     });
 
-    it('should render Login btn', () => {
-        const wrapper = shallow(<LoginComponent {...defaultProps} />) ;
-        const loginBtn = wrapper.find('button') ;
-        expect(loginBtn.length).toBe(1) ;
-        expect(loginBtn.text()).toBe('Login') ;
+    it('should render Signup btn', () => {
+        const wrapper = shallow(<SignupComponent {...defaultProps} />) ;
+        const signupBtn = wrapper.find('button') ;
+        expect(signupBtn.length).toBe(1) ;
+        expect(signupBtn.text()).toBe('Submit') ;
     });
 
     it('should call onSubmit on form submit', () => {
-        const wrapper = shallow(<LoginComponent {...defaultProps} />) ;
+        const wrapper = shallow(<SignupComponent {...defaultProps} />) ;
 
         wrapper.find('form').simulate('submit');
         expect(defaultProps.onSubmit).toHaveBeenCalledTimes(1);

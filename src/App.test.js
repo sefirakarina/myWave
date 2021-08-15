@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme';
 import App from './App';
-import LoginContainer from './containers/Login/LoginContainer';
+import SignupContainer from './containers/Signup/SignupContainer';
 
-describe('renders LoginContainer', () => {
+describe('App', () => {
   
-  it('should render 3 InputField', () => {
+  it('should render SignupContainer', () => {
     const wrapper = shallow(<App />) ;
-    expect(wrapper.find(LoginContainer).length).toBe(1);
+    expect(wrapper.find(SignupContainer).length).toBe(1);
   });
 
 });

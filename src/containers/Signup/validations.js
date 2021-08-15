@@ -16,7 +16,7 @@ export const validateEmail = (value) => {
 export const validatePassword = (value) => {
     const emptyField = required(value) ;
     if(!emptyField){
-        const regex = new RegExp(/(?=.*\d)(?=.*[A-Z])(?=.*\W)/);
+        const regex = new RegExp(/(?=.*\d)(?=.*[A-Z])(?=.*[\W_]+)/);
         if(!regex.test(value.trim())){
             return errorMessages.INVALID_PASSWORD ;
         }

@@ -1,9 +1,9 @@
 import React  , { useState } from 'react';
-import LoginComponent from '../../components/Login/LoginComponent'
+import SignupComponent from '../../components/Signup/SignupComponent'
 import { validateconfirmPassword, validateEmail, validatePassword } from './validations';
-import './login.scss' ;
+import './signup.scss' ;
 
-const LoginContainer =  () => {
+const SignupContainer =  () => {
   const[ data, setData ] = useState({
     email: '',
     password: '',
@@ -22,9 +22,8 @@ const LoginContainer =  () => {
       password: passwordError,
       confirmPassword: confirmPasswordError
     })
-    if(!emailError && !passwordError && !confirmPasswordError){
-      setSuccess(true) ;
-    }
+    const noError = !emailError && !passwordError && !confirmPasswordError
+    setSuccess(noError ? true : false) ;
   }
 
   const onChange = (e) => {
@@ -58,15 +57,15 @@ const LoginContainer =  () => {
     }
   ]
 
-  const loginProps = {
+  const signupProps = {
     onSubmit,
     success,
     fields
   }
 
   return(
-    <LoginComponent {...loginProps} />
+    <SignupComponent {...signupProps} />
   );
 }
 
-export default LoginContainer;
+export default SignupContainer;

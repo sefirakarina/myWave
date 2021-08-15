@@ -1,11 +1,11 @@
 import React from 'react';
-import LoginContainer from './containers/Login/LoginContainer';
+import SignupContainer from './containers/Signup/SignupContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className='mt-5'>
-      <LoginContainer />
+      <SignupContainer />
     </div>
   );
 }
