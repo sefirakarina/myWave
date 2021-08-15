@@ -1,0 +1,35 @@
+$color-error: rgb(190, 4, 4) ;
+
+@mixin input-field($color: #ccc) {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $color;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+@mixin text($color: black, $top:1rem) {
+  display: block;
+  padding: $top 0 .25rem;
+  font-size: 14px;
+  color: $color ;
+}
+
+.input-default {
+  @include input-field;
+}
+
+.input-error {
+  @include input-field($color: $color-error);
+}
+
+label{
+  @include text;
+}
+
+span{
+  @include text($color:$color-error, $top:.25rem);
+}
+
+

@@ -1,0 +1,17 @@
+.centered {
+  margin: 0 auto;
+  text-align: left;
+  width: 800px;
+}
+
+button{
+  color: #fff!important;
+  background-color: #5e7d9a !important;
+  box-shadow: none !important;
+  border-radius: 10px;
+  border:none;
+  width: 100%;
+  &:hover{
+    background:#3498DB!important;;
+  }
+}
